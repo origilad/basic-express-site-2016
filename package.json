@@ -15,10 +15,10 @@
   "author": "Ben Gourley",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.13.4",
+    "express": "^4.14.0",
     "jade": "^1.11.0",
     "morgan": "^1.7.0",
-    "nodemon": "^1.9.1",
-    "stylus": "^0.53.0"
+    "nodemon": "^1.9.2",
+    "stylus": "^0.54.5"
   }
 }
