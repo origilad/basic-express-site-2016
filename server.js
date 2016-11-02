@@ -3,6 +3,10 @@ var express = require('express')
   , app = express()
   , template = require('jade').compileFile(__dirname + '/source/templates/homepage.jade')
 
+var routes = require('./routes/routes')(app);
+
+
+
 app.use(logger('dev'))
 app.use(express.static(__dirname + '/static'))
 
