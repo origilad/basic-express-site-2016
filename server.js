@@ -28,11 +28,11 @@ app.use(express.static(__dirname + '/public'))
 /* ============================================== */
 
 /* EVERY app.get IS A ROUTE*/
-var AdventureAnalytics = require('./routes/AdventureAnalytics');
+var AdventureAnalytics = require(__dirname + '/routes/AdventureAnalytics');
 app.get('/AdventureAnalytics', AdventureAnalytics.AdventureAnalytics);
 
 
-var TravelLog = require('./routes/TravelLog');
+var TravelLog = require( __dirname + '/routes/TravelLog');
 app.get('/TravelLog', TravelLog.TravelLog);
 
 
