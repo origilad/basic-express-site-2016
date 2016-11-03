@@ -36,9 +36,15 @@ var TravelLog = require( __dirname + '/routes/TravelLog');
 app.get('/TravelLog', TravelLog.TravelLog);
 
 
+
 //HOMEPAGE
 var HomePage = require( __dirname + '/routes/HomePage');
-app.get('/', HomePage.HomePage);
+app.get('/Home', HomePage.HomePage);
+
+//base route redirects to homepage
+app.get('/', function(req,res, next){
+  res.redirect('/Home');
+});
 
 
 app.listen(process.env.PORT || 3000, function () {
