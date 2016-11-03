@@ -37,15 +37,8 @@ app.get('/TravelLog', TravelLog.TravelLog);
 
 
 //HOMEPAGE
-app.get('/', function (req, res, next) {
-  try {
-    //renders from /views/homepage.jade. Notice the extend layout at the top of that file
-    //sets the title to Home
-    res.render('homepage', {title : 'Home'})
-  } catch (e) {
-    next(e)
-  }
-})
+var HomePage = require( __dirname + '/routes/HomePage');
+app.get('/', HomePage.HomePage);
 
 
 app.listen(process.env.PORT || 3000, function () {
