@@ -1,7 +1,7 @@
 var express = require('express')
   , logger = require('morgan')
   , app = express()
-  , template = require('jade').compileFile(__dirname + '/source/templates/homepage.jade')
+  , template = require('jade').compileFile( __dirname + '/source/templates/homepage.jade');
 
 var routes = require('./routes/routes')(app);
 

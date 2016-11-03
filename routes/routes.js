@@ -3,7 +3,11 @@
 */
 module.exports = function(app) {
 
-		
-app.use('/AdventureAnalytics',require('./advAna'));
-};
 
+app.use('/AdventureAnalytics', require('./advAna'));
+app.use('/TravelLog', require('./travelLog'));
+
+
+
+
+};
