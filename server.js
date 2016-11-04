@@ -52,11 +52,14 @@ app.get('/Home', HomePage.HomePage);
 
 //base route redirects to homepage
 app.get('/', function(req,res, next){
-  res.redirect('/Home');
+  res.redirect('/Login');
 });
 
 
-
+  
+var Login = require( __dirname + '/routes/Login');
+app.get('/Login', Login.Login);
+app.post('/Login', Login.Submit);
 app.post('/CreateNewAdventure', function(req, res){
   var lat = req.body.lat;
   var lng = req.body.lng;
