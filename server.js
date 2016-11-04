@@ -50,20 +50,19 @@ app.get('/LoggedAdventure', function(req, res){
 var HomePage = require( __dirname + '/routes/HomePage');
 app.get('/Home', HomePage.HomePage);
 
-//base route redirects to login
+//base route redirects to homepage
 app.get('/', function(req,res, next){
-  res.redirect('/Login');
+  res.redirect('/Home');
 });
 
-var Login = require( __dirname + '/routes/Login');
-app.get('/Login', Login.Login);
-app.post('/Login', Login.Submit);
+
 
 app.post('/CreateNewAdventure', function(req, res){
   var lat = req.body.lat;
   var lng = req.body.lng;
   res.send({"page": "LoggedAdventure"});
-  res.render('logged-adventure', {title: "JWOW"});  
+  res.render('logged-adventure', {title: "JWOW"});
+  //res.render('homepage', {newLoc: {lat: 0, lng: 0}});
 });
 
 app.listen(process.env.PORT || 3000, function () {
