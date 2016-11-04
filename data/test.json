@@ -1,16 +1,19 @@
 {
-  "locations": [
+  "markers": [
     {
-      "name": "Geisel",
-      "date visited": "October 21, 2016"
+      "name": "Finsburry",
+      "lat": 51.52617,
+      "lng": -0.10866 
     },
     {
-      "name": "Black's Beach",
-      "date visited": "October 21, 2016"
+      "name": "Shoreditch",
+      "lat": 51.52639,
+      "lng": -0.08017
     },
     {
-      "name": "Torrey Pines Beach",
-      "date visited": "October 21, 2016"
+      "name": "Whitechapel",
+      "lat": 51.51848,
+      "lng": -0.06317 
     }
   ]
 }

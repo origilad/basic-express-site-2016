@@ -36,6 +36,8 @@ var TravelLog = require( __dirname + '/routes/TravelLog');
 app.get('/TravelLog', TravelLog.TravelLog);
 
 
+var LoggedAdventure = require( __dirname + '/routes/LoggedAdventure');
+app.get('/LoggedAdventure', LoggedAdventure.LoggedAdventure);
 
 //HOMEPAGE
 var HomePage = require( __dirname + '/routes/HomePage');
