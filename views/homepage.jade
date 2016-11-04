@@ -8,19 +8,23 @@ block content
         script(src='http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js')
         script(src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js")
         script.
-            function onMapClick(e){
-                alert("creating new adventure");
-                alert(e.latlng.lat + "!" + e.latlng.lng);
-                $.post('http://localhost:3000/CreateNewAdventure', {lat: e.latlng.lat, lng: e.latlng.lng})
-                .success(function(data) {
-                  alert(data.lat);
-                  window.location = data.page;
-                });
-            }
             var map = L.map("map").setView([51.505, -0.09], 13);
+            function onMarkerClick(e){
+                window.location = '/LoggedAdventure';
+            }
+
+            function onMapClick(e){
+                var marker = L.marker([e.latlng.lat, e.latlng.lng ]).addTo(map);
+                $.get('/LoggedAdventure', {lat: e.latlng.lat, lng: e.latlng.lng});
+                marker.on('click', onMarkerClick);
+            }
+
             var marker = L.marker([#{markers[0].lat}, #{markers[0].lng}]).addTo(map);
             var marker1 = L.marker([#{markers[1].lat}, #{markers[1].lng}]).addTo(map);
             var marker2 = L.marker([#{markers[2].lat}, #{markers[2].lng}]).addTo(map);
             map.on('click', onMapClick);
+            marker1.on('click', onMarkerClick);            
+            marker.on('click', onMarkerClick);            
+            marker2.on('click', onMarkerClick);            
             L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
              
