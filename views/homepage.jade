@@ -11,11 +11,8 @@ block content
             function onMapClick(e){
                 alert("creating new adventure");
                 alert(e.latlng.lat + "!" + e.latlng.lng);
-                $.post('http://localhost:3000/CreateNewAdventure', {lat: e.latlng.lat, lng: e.latlng.lng})
-                .success(function(data) {
-                  alert(data.lat);
-                  window.location = data.page;
-                });
+                $.get('/LoggedAdventure', {lat: e.latlng.lat, lng: e.latlng.lng}, function(data){});
+                window.location = "/LoggedAdventure";
             }
             var map = L.map("map").setView([51.505, -0.09], 13);
             var marker = L.marker([#{markers[0].lat}, #{markers[0].lng}]).addTo(map);

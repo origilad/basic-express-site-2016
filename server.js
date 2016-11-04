@@ -7,6 +7,10 @@ var express = require('express')
   , stylus = require('stylus')
   , nib = require('nib');
 
+var bodyParser = require('body-parser');
+app.use(bodyParser.json()); // support json encoded bodies
+app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
+
 //defining a compile function so it compiles my .styl files
   function compile(str, path) {
     return stylus(str)
@@ -37,7 +41,10 @@ app.get('/TravelLog', TravelLog.TravelLog);
 
 
 var LoggedAdventure = require( __dirname + '/routes/LoggedAdventure');
-app.get('/LoggedAdventure', LoggedAdventure.LoggedAdventure);
+app.get('/LoggedAdventure', function(req, res){
+  console.log(req.body);
+  return res.render('logged-adventure', {title: "POOP", lat: req.body.lat});
+});
 
 //HOMEPAGE
 var HomePage = require( __dirname + '/routes/HomePage');
@@ -50,8 +57,12 @@ app.get('/', function(req,res, next){
 
 
 app.post('/CreateNewAdventure', function(req, res){
+  var lat = req.body.lat;
+  var lng = req.body.lng;
   res.send({"page": "LoggedAdventure"});
+  res.render('logged-adventure', {title: "JWOW"});  
 });
+
 app.listen(process.env.PORT || 3000, function () {
   console.log('Listening on http://localhost:' + (process.env.PORT || 3000))
 })
