@@ -15,12 +15,15 @@
   "author": "Ben Gourley",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "jade": "^1.11.0",
     "morgan": "^1.7.0",
+    "nib": "^1.1.2",
     "nodemon": "^1.9.2",
     "stylus": "^0.54.5",
     "nib": "^1.1.2",
     "body-parser": "^1.15.2"
+
   }
 }

@@ -58,6 +58,11 @@ app.get('/', function(req,res, next){
 
 
 
+var Login = require( __dirname + '/routes/Login');
+app.get('/Login', Login.Login);
+app.post('/Login', Login.Submit);
+
+
 app.post('/CreateNewAdventure', function(req, res){
   var lat = req.body.lat;
   var lng = req.body.lng;
