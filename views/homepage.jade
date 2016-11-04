@@ -13,6 +13,8 @@ block content
                 window.location = '/LoggedAdventure';
             }
 
+            
+
             function onMapClick(e){
                 var marker = L.marker([e.latlng.lat, e.latlng.lng ]).addTo(map);
                 $.get('/LoggedAdventure', {lat: e.latlng.lat, lng: e.latlng.lng});
@@ -27,4 +29,4 @@ block content
             marker.on('click', onMarkerClick);            
             marker2.on('click', onMarkerClick);            
             L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
-             
+            
