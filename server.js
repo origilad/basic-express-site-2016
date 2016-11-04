@@ -43,9 +43,13 @@ app.get('/LoggedAdventure', LoggedAdventure.LoggedAdventure);
 var HomePage = require( __dirname + '/routes/HomePage');
 app.get('/Home', HomePage.HomePage);
 
+//HOMEPAGE
+var LoginPage = require( __dirname + '/routes/LoginPage');
+app.get('/LoginPage', LoginPage.LoginPage);
+
 //base route redirects to homepage
 app.get('/', function(req,res, next){
-  res.redirect('/Home');
+  res.redirect('/LoginPage');
 });
 
 
