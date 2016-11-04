@@ -1,4 +1,4 @@
-var data = require( '../data/test.json');
+var data = require( __dirname + '/../data/test.json');
 
 exports.TravelLog = function(req, res){
   try {

@@ -50,11 +50,14 @@ app.get('/LoggedAdventure', function(req, res){
 var HomePage = require( __dirname + '/routes/HomePage');
 app.get('/Home', HomePage.HomePage);
 
-//base route redirects to homepage
+//base route redirects to login
 app.get('/', function(req,res, next){
-  res.redirect('/Home');
+  res.redirect('/Login');
 });
 
+var Login = require( __dirname + '/routes/Login');
+app.get('/Login', Login.Login);
+app.post('/Login', Login.Submit);
 
 app.post('/CreateNewAdventure', function(req, res){
   var lat = req.body.lat;
