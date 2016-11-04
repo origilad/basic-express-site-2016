@@ -36,17 +36,25 @@ var TravelLog = require( __dirname + '/routes/TravelLog');
 app.get('/TravelLog', TravelLog.TravelLog);
 
 
+var LoggedAdventure = require( __dirname + '/routes/LoggedAdventure');
+app.get('/LoggedAdventure', LoggedAdventure.LoggedAdventure);
 
 //HOMEPAGE
 var HomePage = require( __dirname + '/routes/HomePage');
 app.get('/Home', HomePage.HomePage);
 
-//base route redirects to homepage
+//base route redirects to login
 app.get('/', function(req,res, next){
-  res.redirect('/Home');
+  res.redirect('/Login');
 });
 
+var Login = require( __dirname + '/routes/Login');
+app.get('/Login', Login.Login);
+app.post('/Login', Login.Submit);
 
+app.post('/CreateNewAdventure', function(req, res){
+  res.send({"page": "LoggedAdventure"});
+});
 app.listen(process.env.PORT || 3000, function () {
   console.log('Listening on http://localhost:' + (process.env.PORT || 3000))
 })
