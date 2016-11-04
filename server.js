@@ -52,8 +52,9 @@ app.get('/Home', HomePage.HomePage);
 
 //base route redirects to homepage
 app.get('/', function(req,res, next){
-  res.redirect('/Home');
+  res.redirect('/Login');
 });
+
 
 
 
