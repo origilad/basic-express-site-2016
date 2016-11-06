@@ -45,6 +45,7 @@ app.get('/LoggedAdventure', function(req, res){
   console.log(req.body);
   return res.render('logged-adventure', {title: "POOP", lat: req.body.lat});
 });
+app.post('/LoggedAdventure', LoggedAdventure.Submit);
 
 //HOMEPAGE
 var HomePage = require( __dirname + '/routes/HomePage');
