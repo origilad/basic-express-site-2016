@@ -1,17 +1,23 @@
 extend layout
 
 block content
+  p Log an Adventure!
+      form#log-adventure(method="post", enctype="application/json")
+        div.input
+          span.label Times Visited
+          input#TimesVisited(type='number' name="Times Visited")
 
-  p LOGGED ADVENTURE
+        div.input
+          span.label Rating (1-10)
+          input#Rating.formcontrol(type='number' name="Rating")
 
-  form(action='/logAdventure',method='post')
-  Enter times visited
-  input(type='text')
-  br
-  Enter rating 0-10
-  input(type='text')
-  br
-  Enter hours spent
-  input(type='text')
-  br
-  a(href="/home") submit
+        div.input
+          span.label Hours Spent
+          input#HoursSpent(type='number' name="Hours Spent")
+
+        div.input
+          span.label Description
+          textarea#Rating(rows="5" cols="50" name="Description")
+
+        div.actions
+          input(type="submit", value="Submit")
