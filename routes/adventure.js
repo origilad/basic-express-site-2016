@@ -1,6 +1,6 @@
 var jsonfile = require('jsonfile'); //so we can easily write to json
 jsonfile.spaces = 4; //so when we write to jsonfile it formats
-var filepath = __dirname + "/../data/test.json";
+var filepath = __dirname + "/../data/data.json";
 jsonContent = jsonfile.readFileSync(filepath); //read file and put as json object
 //jsonfile.writeFileSync(__dirname + '/../data/TESTING.json', jsonContent); //write back the stuff we changed
 

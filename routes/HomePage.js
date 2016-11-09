@@ -1,7 +1,7 @@
 var express = require("express")
 var app = express()
 var fs = require('fs');
-var data = require( '../data/test.json');
+var data = require( '../data/data.json');
 
 
 exports.HomePage = function(req, res){
