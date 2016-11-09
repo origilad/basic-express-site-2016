@@ -1,26 +1,23 @@
 extend layout
 
 block content
-  .main.container
-  .row
-    .col-md-6.col-md-offset-3
-      h1.display-4.m-b-2 Log an Adventure!
-
-      form#log-adventure(enctype="application/json")
+  p Log an Adventure!
+      form#log-adventure(method="post", enctype="application/json")
         div.log-adventure
-          label(for="Times Visited") Times Visited:
+          span.label Times Visited
           input#TimesVisited(type='number' name="Times Visited")
 
         div.log-adventure
-          label(for="Rating") Rating (1-10):
+          span.label Rating (1-10)
           input#Rating.formcontrol(type='number' name="Rating")
 
-          div.log-adventure
-            label(for="Hours Spent") Hours Spent:
-            input#HoursSpent(type='number' name="Hours Spent")
+        div.log-adventure
+          span.label Hours Spent
+          input#HoursSpent(type='number' name="Hours Spent")
 
-          div.log-adventure
-            label(for="Description") Description:
-            textarea#Rating(rows="5" cols="50" name="Description")
+        div.log-adventure
+          span.label Description
+          textarea#Rating(rows="5" cols="50" name="Description")
 
+        div.actions
           input(type="submit", value="Submit")

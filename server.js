@@ -56,6 +56,8 @@ app.get('/', function(req,res, next){
   res.redirect('/Login');
 });
 
+var adventure = require(__dirname + '/routes/adventure');
+app.get('/adventure/:name', adventure.getAdventure);
 
 
 

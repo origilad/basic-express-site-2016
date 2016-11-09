@@ -6,12 +6,15 @@ jsonContent = jsonfile.readFileSync(filepath); //read file and put as json objec
 jsonfile.writeFileSync(__dirname + '/../data/TESTING.json', jsonContent); //write back the stuff we changed
 
 
-
-exports.TravelLog = function(req, res){
+exports.getAdventure = function(req, res){
   try {
-      //runs the TravelLog pug file!!!
-      res.render('TravelLog', jsonContent); //data is our json file with all the data!!!
+    var name = req.params.name; //name from the route
+    console.log(name);
 
+    //runs the adventure pug file!!!
+    res.render('adventure', {
+      'adventureName': name
+    }); //data is our json file with all the data!!!
   } catch (e) {
     next(e)
   }

@@ -1,7 +1,8 @@
 var express = require("express")
 var app = express()
-
+var fs = require('fs');
 var data = require( '../data/test.json');
+
 
 exports.HomePage = function(req, res){
   try {
@@ -14,11 +15,13 @@ exports.HomePage = function(req, res){
       title : 'HomePage2',
       markers : marks,
       newLoc: 0
+
     });
+
 
  } catch (e) {
     next(e)
   }
 
- 
+
 };

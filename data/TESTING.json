@@ -37,11 +37,6 @@
             "name": "test",
             "image": "test",
             "id": "Test"
-        },
-        {
-            "name": "test2",
-            "image": "test2",
-            "id": "Test2"
         }
     ]
 }
