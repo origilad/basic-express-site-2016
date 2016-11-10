@@ -20,34 +20,32 @@
     "adventures": [
         {
             "name": "Geisel Library",
-            "image": "geisel.jpg",
+            "image": "http://loremflickr.com/600/200",
             "id": "adventure1"
         },
         {
             "name": "Blacks Beach",
-            "image": "beach.jpeg",
+            "image": "http://loremflickr.com/600/200/beach",
             "id": "adventure2"
         },
         {
             "name": "Potato Chip Rock",
-            "image": "potatochip.jpg",
+            "image": "http://loremflickr.com/600/200/potatochip",
             "id": "adventure3"
-        },
-        {
-            "name": "test",
-            "image": "test",
-            "id": "Test"
-        },
-        {
-            "name": "test2",
-            "image": "test2",
-            "id": "Test2"
         }
     ],
-    "users" : 
-    [
-        {"id": "admin", "pwd": "123", "adventuresLength": "0", "adventures": [{"lat": 0, "lng": 0}]}        
-
-    ]
-    
+    "users": [
+        {
+            "id": "admin",
+            "pwd": "123",
+            "adventuresLength": "0",
+            "adventures": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ]
+        }
+    ],
+    "_locals": {}
 }

@@ -4,6 +4,10 @@ block content
   p Log an Adventure!
       form#log-adventure(method="post", enctype="application/json")
         div.input
+          span.label Name
+          input#Name(type='text' name="name")
+
+        div.input
           span.label Times Visited
           input#TimesVisited(type='number' name="Times Visited")
 

@@ -20,7 +20,7 @@
     "adventures": [
         {
             "name": "Geisel Library",
-            "image": "geisel.jpg",
+            "image": "/../public/geisel.jpg",
             "id": "adventure1"
         },
         {
@@ -34,14 +34,11 @@
             "id": "adventure3"
         },
         {
-            "name": "test",
-            "image": "test",
-            "id": "Test"
-        },
-        {
-            "name": "test2",
-            "image": "test2",
-            "id": "Test2"
+            "name": "333",
+            "Times Visited": "",
+            "Rating": "",
+            "Hours Spent": "",
+            "Description": "33"
         }
     ],
     "users": [
