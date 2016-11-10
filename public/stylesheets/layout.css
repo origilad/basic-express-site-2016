@@ -74,14 +74,13 @@ h2 span {
   padding: 10px;
 }
 
-.loginbtn {
+.submitbtn {
   display: inline-block;
   color: #666;
   background-color: #eee;
-  text-transform: uppercase;
   letter-spacing: 2px;
-  font-size: 12px;
-  padding: 10px 30px;
+  font-size: 14px;
+  padding: 10px 75px;
   border-radius: 5px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -101,3 +100,11 @@ h2 span {
     background-color: #CCC;
     border-color: rgba(0,0,0,0.9);
   }
+.logintext {
+  width: 20px;
+}
+
+.reg {
+  margin-top: 8px;
+}
+
