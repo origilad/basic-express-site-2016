@@ -61,6 +61,9 @@ var Login = require( __dirname + '/routes/Login');
 app.get('/Login', Login.Login);
 app.post('/Login', Login.Submit);
 
+var Register = require( __dirname + '/routes/Register');
+app.get('/Register', Register.Register);
+app.post('/Register', Register.Submit);
 
 app.listen(process.env.PORT || 3000, function () {
   console.log('Listening on http://localhost:' + (process.env.PORT || 3000))
