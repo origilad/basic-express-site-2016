@@ -211,6 +211,26 @@
                     "image": "http://lorempixel.com/600/200/?random=65",
                     "lat": "51.519658987846164",
                     "lng": "-0.0890064239501953"
+                },
+                {
+                    "name": "GEISEL",
+                    "Times_Visited": "1",
+                    "Rating": "1",
+                    "Hours_Spent": "10",
+                    "Description": "hey",
+                    "image": "http://lorempixel.com/600/200/?random=24",
+                    "lat": "51.52416504880453",
+                    "lng": "-0.12479782104492188"
+                },
+                {
+                    "name": "Scotland",
+                    "Times_Visited": "11",
+                    "Rating": "10",
+                    "Hours_Spent": "1111",
+                    "Description": "this is cool",
+                    "image": "http://lorempixel.com/600/200/?random=44",
+                    "lat": "51.532748695498384",
+                    "lng": "-0.01956939697265625"
                 }
             ]
         }
