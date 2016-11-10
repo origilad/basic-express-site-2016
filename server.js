@@ -33,15 +33,15 @@ app.use(express.static(__dirname + '/public'))
 
 /* EVERY app.get IS A ROUTE*/
 var AdventureAnalytics = require(__dirname + '/routes/AdventureAnalytics');
-app.get('/AdventureAnalytics', AdventureAnalytics.AdventureAnalytics);
+app.get('/AdventureAnalytics/:user', AdventureAnalytics.AdventureAnalytics);
 
 
 var TravelLog = require( __dirname + '/routes/TravelLog');
-app.get('/TravelLog', TravelLog.TravelLog);
+app.get('/TravelLog/:user', TravelLog.TravelLog);
 
 
 var LoggedAdventure = require( __dirname + '/routes/LoggedAdventure');
-app.get('/LoggedAdventure', function(req, res){
+app.get('/LoggedAdventure/:user', function(req, res){
   console.log(req.body);
   return res.render('logged-adventure', {title: "POOP", lat: req.body.lat});
 });
@@ -49,8 +49,7 @@ app.post('/LoggedAdventure', LoggedAdventure.Submit);
 
 //HOMEPAGE
 var HomePage = require( __dirname + '/routes/HomePage');
-app.get('/Home', HomePage.HomePage);
-app.post('/Home', HomePage.Logging);
+app.get('/Home/:user', HomePage.HomePage);
 
 //base route redirects to homepage
 app.get('/', function(req,res, next){
@@ -65,14 +64,6 @@ var Login = require( __dirname + '/routes/Login');
 app.get('/Login', Login.Login);
 app.post('/Login', Login.Submit);
 
-
-app.post('/CreateNewAdventure', function(req, res){
-  var lat = req.body.lat;
-  var lng = req.body.lng;
-  res.send({"page": "LoggedAdventure"});
-  res.render('logged-adventure', {title: "JWOW"});
-  //res.render('homepage', {newLoc: {lat: 0, lng: 0}});
-});
 
 app.listen(process.env.PORT || 3000, function () {
   console.log('Listening on http://localhost:' + (process.env.PORT || 3000))

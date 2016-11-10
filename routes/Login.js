@@ -6,6 +6,8 @@ jsonfile.spaces = 4; //so when we write to jsonfile it formats
 var filepath = __dirname + "/../data/data.json";
 jsonContent = jsonfile.readFileSync(filepath); //read file and put as json object
 
+var globalUserID;
+
 exports.Login = function(req, res){
   try {
     res.render('Login', {title : 'Login'});
@@ -19,8 +21,9 @@ exports.Submit = function(req, res) {
   for(var i = 0; i<jsonContent.users.length; i++){
       if(jsonContent.users[i].id === req.body.username){
           if(jsonContent.users[i].pwd === req.body.password){
-		res.render('homepage', {user: jsonContent.users[i] });	      
-		res.redirect('/Home');
+		globalUserID = req.body.username;
+                //res.render('homepage', {user: jsonContent.users[i] });	      
+		res.redirect('/Home/' + jsonContent.users[i].id);
 	  }
 	  else{
 	      dialog.err("Invalid password!");
@@ -31,5 +34,5 @@ exports.Submit = function(req, res) {
       }
 
   }
-  res.redirect('/Login');
+  //res.redirect('/Login');
 }

@@ -48,11 +48,10 @@
         {
             "id": "admin",
             "pwd": "123",
-            "adventuresLength": "1",
             "adventures": [
                 {
-                    "lat": 0,
-                    "lng": 0
+                    "lat": 55,
+                    "lng": 30
                 }
             ]
         }
