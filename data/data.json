@@ -164,5 +164,9 @@
             "id": "Test2"
         }
     ],
-    "_locals": {}
+    "users" : 
+    {
+        "dmoll" : "dmoll"
+    }
+    
 }
