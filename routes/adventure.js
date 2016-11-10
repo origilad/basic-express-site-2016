@@ -9,6 +9,7 @@ exports.getAdventure = function(req, res){
   try {
 
     var user = req.params.user;
+    console.log(user + "HEYYY");
     for(var i = 0; i<jsonContent.users.length; i++){
        if(jsonContent.users[i].id === user){
 
@@ -28,6 +29,7 @@ exports.getAdventure = function(req, res){
          //assign adventureName to the name we receive in params
          res.render('adventure', {
            'adventureName': name,
+           'user': user,
            'adventureContent': user.adventures[adventureIndex]
          });
       //runs the TravelLog pug file!!!
