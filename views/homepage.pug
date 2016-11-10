@@ -18,9 +18,9 @@ block content
                 marker.on('click', onMarkerClick);
             }
 
-            for( var i = 0; i<#{user.adventuresLength}; i++){
-                console.log("WOW");
-                var marker = L.marker([#{user.adventures[0].lat}, #{user.adventures[0].lng}]).addTo(map);
+            var adventures = !{JSON.stringify(user.adventures)};
+            for( var i = 0; i<adventures.length; i++){
+                var marker = L.marker([adventures[i].lat, adventures[i].lng]).addTo(map);
                 marker.on('click', onMarkerClick);
             }
 
