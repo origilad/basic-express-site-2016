@@ -16,7 +16,7 @@ block content
   .main.container
     .row
       .col-md-6.col-md-offset-3
-        h1.display-4.m-b-2 #{title} 
+        h1.display-4.m-b-2 Log in to Spots
         form(name="add-estimation", method="post")
             div.input
                 label Username
@@ -25,5 +25,6 @@ block content
                 label Password
                 input(type="password",name="password", class='form-control')
             div.action
-                button.btn.btn-defaults TEST
-                input(type="submit", class="button.btn.btn-default", value="Submit")
+                input(type="submit", value="Log in").loginbtn
+            div(style="margin-top:5px;") Don't have an account?
+                <a href="/Home" style="margin-left:5px;">Sign up!</a>
