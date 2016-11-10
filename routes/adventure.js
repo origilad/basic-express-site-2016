@@ -9,12 +9,18 @@ exports.getAdventure = function(req, res){
   try {
     var name = req.params.name; //name from the route
     console.log(name);
+    var user = req.params.user;
+    for(var i = 0; i<jsonContent.users.length; i++){
+       console.log("wow");
+       console.log(user + "!");
+       if(jsonContent.users[i].id === user){
+
+         res.render('adventure', {adventureName: name, user: jsonContent.users[i]});
+       }
+    }
 
     //runs the adventure pug file!!!
     //assign adventureName to the name we receive in params
-    res.render('adventure', {
-      'adventureName': name
-    }); //data is our json file with all the data!!!
   } catch (e) {
     next(e)
   }
