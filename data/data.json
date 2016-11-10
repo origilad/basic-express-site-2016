@@ -34,18 +34,11 @@
             "id": "adventure3"
         }
     ],
-    "users": [
-        {
-            "id": "admin",
-            "pwd": "123",
-            "adventuresLength": "0",
-            "adventures": [
-                {
-                    "lat": 0,
-                    "lng": 0
-                }
-            ]
-        }
-    ],
-    "_locals": {}
+    "users" :
+    [
+        {"id": "admin", "pwd": "123", "adventures": [{"lat": 55, "lng": 30}]}
+
+    ]
+
+
 }

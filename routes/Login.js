@@ -19,7 +19,7 @@ exports.Submit = function(req, res) {
   for(var i = 0; i<jsonContent.users.length; i++){
       if(jsonContent.users[i].id === req.body.username){
           if(jsonContent.users[i].pwd === req.body.password){
-		res.render('homepage', {user: jsonContent.users[i]});	      
+		res.render('homepage', {user: jsonContent.users[i] });	      
 		res.redirect('/Home');
 	  }
 	  else{
