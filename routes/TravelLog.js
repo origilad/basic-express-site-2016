@@ -8,9 +8,18 @@ jsonContent = jsonfile.readFileSync(filepath); //read file and put as json objec
 
 exports.TravelLog = function(req, res){
   try {
-      //runs the TravelLog pug file!!!
-      res.render('TravelLog', jsonContent); //data is our json file with all the data!!!
 
+    var user = req.params.user; 
+    for(var i = 0; i<jsonContent.users.length; i++){
+       console.log("wow");
+       console.log(user + "!");
+       if(jsonContent.users[i].id === user){
+         
+         res.render('TravelLog', {user: jsonContent.users[i]});
+      //runs the TravelLog pug file!!!
+      //res.render('TravelLog', jsonContent); //data is our json file with all the data!!!
+       }
+    }
   } catch (e) {
     next(e)
   }
