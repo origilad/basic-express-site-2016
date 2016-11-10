@@ -19,20 +19,20 @@ body {
   text-transform: uppercase;
   color: #fff;
 }
-.nav {
+.nav1 {
   background: #000;
   text-align: center;
 }
-.nav li {
+.nav1 li {
   display: inline-block;
 }
-.nav a {
+.nav1 a {
   display: inline-block;
   padding: 20px;
   color: #fff;
   text-decoration: none;
 }
-.nav a:hover {
+.nav1 a:hover {
   background-color: #3ab795;
   text-decoration: underline;
 }
@@ -54,9 +54,10 @@ body {
   color: #444;
   font-size: 12px;
 }
-.image {
+.image1 {
   position: relative;
   width: 100%;
+  display: table-cell;
 }
 h2 {
   position: absolute;
@@ -72,3 +73,38 @@ h2 span {
   background: rgba(0,0,0,0.7);
   padding: 10px;
 }
+
+.submitbtn {
+  display: inline-block;
+  color: #666;
+  background-color: #eee;
+  letter-spacing: 2px;
+  font-size: 14px;
+  padding: 10px 75px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border: 1px solid rgba(0,0,0,0.3);
+  border-bottom-width: 3px;
+  position: relative; 
+  top: 5px;
+  left: -10px;
+  margin: 10px;
+}
+
+  .loginbtn:hover {
+    background-color: #e3e3e3;
+    border-color: rgba(0,0,0,0.5);
+  }
+  .loginbtn:active {
+    background-color: #CCC;
+    border-color: rgba(0,0,0,0.9);
+  }
+.logintext {
+  width: 20px;
+}
+
+.reg {
+  margin-top: 8px;
+}
+
