@@ -50,6 +50,7 @@ app.post('/LoggedAdventure', LoggedAdventure.Submit);
 //HOMEPAGE
 var HomePage = require( __dirname + '/routes/HomePage');
 app.get('/Home', HomePage.HomePage);
+app.post('/Home', HomePage.Logging);
 
 //base route redirects to homepage
 app.get('/', function(req,res, next){
@@ -58,7 +59,6 @@ app.get('/', function(req,res, next){
 
 var adventure = require(__dirname + '/routes/adventure');
 app.get('/adventure/:name', adventure.getAdventure);
-
 
 
 var Login = require( __dirname + '/routes/Login');

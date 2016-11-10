@@ -2,7 +2,7 @@ extend layout
 
 block content
         h1 MAP
-        p Welcome to the #{title}!
+        p Welcome to the Map!
         link(rel='stylesheet', href='http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css')
         #map(style='height: 500px;')
         script(src='http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js')
@@ -15,16 +15,15 @@ block content
 
             function onMapClick(e){
                 var marker = L.marker([e.latlng.lat, e.latlng.lng ]).addTo(map);
-                $.get('/LoggedAdventure', {lat: e.latlng.lat, lng: e.latlng.lng});
                 marker.on('click', onMarkerClick);
             }
 
-            var marker = L.marker([#{markers[0].lat}, #{markers[0].lng}]).addTo(map);
-            var marker1 = L.marker([#{markers[1].lat}, #{markers[1].lng}]).addTo(map);
-            var marker2 = L.marker([#{markers[2].lat}, #{markers[2].lng}]).addTo(map);
+            for( var i = 0; i<#{user.adventuresLength}; i++){
+                console.log("WOW");
+                var marker = L.marker([#{user.adventures[0].lat}, #{user.adventures[0].lng}]).addTo(map);
+                marker.on('click', onMarkerClick);
+            }
+
             map.on('click', onMapClick);
-            marker1.on('click', onMarkerClick);            
-            marker.on('click', onMarkerClick);            
-            marker2.on('click', onMarkerClick);            
             L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
-             
+            

@@ -1,8 +1,9 @@
-
 html
   head
     //where to get more css formatting
     link(rel='stylesheet', href='/stylesheets/layout.css')
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
+    link(rel='stylesheet', href='stylesheets/style.css')
     //can rename title to something else later
     title #{title} - Spots
 
@@ -12,13 +13,17 @@ html
 
 
 block content
-    h1= title
-    form(name="add-estimation", method="post")
-        div.input
-            span.label Username
-            input(type="text", name="username")
-        div.input
-            span.label Password
-            input(type="password",name="password")
-        div.actions
-            input(type="submit", value="Submit")
+  .main.container
+    .row
+      .col-md-6.col-md-offset-3
+        h1.display-4.m-b-2 #{title} 
+        form(name="add-estimation", method="post")
+            div.input
+                label Username
+                input(label="WOW", type="text", name="username", class='form-control')
+            div.input
+                label Password
+                input(type="password",name="password", class='form-control')
+            div.action
+                button.btn.btn-defaults TEST
+                input(type="submit", class="button.btn.btn-default", value="Submit")

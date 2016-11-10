@@ -42,12 +42,19 @@
             "name": "test2",
             "image": "test2",
             "id": "Test2"
-        },
-        {
-            "name": "test2",
-            "image": "test2",
-            "id": "Test2"
         }
     ],
-    "_locals": {}
+    "users": [
+        {
+            "id": "admin",
+            "pwd": "123",
+            "adventuresLength": "0",
+            "adventures": [
+                {
+                    "lat": 0,
+                    "lng": 0
+                }
+            ]
+        }
+    ]
 }

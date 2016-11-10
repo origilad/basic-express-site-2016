@@ -1,4 +1,6 @@
 var fs = require('fs');
+var dialog = require('dialog');
+
 var jsonfile = require('jsonfile'); //so we can easily write to json
 jsonfile.spaces = 4; //so when we write to jsonfile it formats
 var filepath = __dirname + "/../data/data.json";
@@ -14,13 +16,20 @@ exports.Login = function(req, res){
 
 exports.Submit = function(req, res) {
   //console.log(req.body)
-  if (jsonContent.users.hasOwnProperty(req.body.username)) {
-  	if (req.body.password == jsonContent.users[req.body.username])
-  	  res.redirect('/Home');
-  }
-  else {
-  	res.redirect('/Login')
-  }
+  for(var i = 0; i<jsonContent.users.length; i++){
+      if(jsonContent.users[i].id === req.body.username){
+          if(jsonContent.users[i].pwd === req.body.password){
+		res.render('homepage', {user: jsonContent.users[i]});	      
+		res.redirect('/Home');
+	  }
+	  else{
+	      dialog.err("Invalid password!");
+	  }
+      }
+      else{
+          dialog.err("Invalid username!");
+      }
 
-
+  }
+  res.redirect('/Login');
 }
