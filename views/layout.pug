@@ -10,10 +10,11 @@ html
       h1.page-title Spots
 
     //links on a menu bar!
-    ul.nav
-      li: a(href='/Home') Home
-      li: a(href='/AdventureAnalytics') Adventure Analytics
-      li: a(href='/TravelLog') Travel Log
+    block links
+      ul.nav
+        li: a(href=homeURL) Home
+        li: a(href=adURL) Adventure Analytics
+        li: a(href=travelURL) Travel Log
 
     .main-content
       block content

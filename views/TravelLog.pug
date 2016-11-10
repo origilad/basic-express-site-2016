@@ -1,4 +1,10 @@
 extend layout
+
+block prepend links
+      - var homeURL = '/Home/' + user.id;
+      - var adURL = '/AdventureAnalytics/' + user.id;
+      - var travelURL = '/TravelLog/' + user.id;
+
 block content
 
     //paragraph for title
@@ -9,7 +15,7 @@ block content
       h3 Travel Log
 
     //go through all of the adventures from the json file that we read
-    each adventure in adventures
+    each adventure in user.adventures
       a(href="adventure/" + adventure.name	class="adventure")
         div(class = "image"	id= adventure.id)
           img(src=""+adventure.image,

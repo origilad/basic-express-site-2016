@@ -7,26 +7,37 @@ jsonContent = jsonfile.readFileSync(filepath); //read file and put as json objec
 
 exports.getAdventure = function(req, res){
   try {
-    var name = req.params.name; //name from the route
-    var adventureIndex = -1;
-    for(var i = 0; i < jsonContent.adventures.length; i++){
-      if(jsonContent.adventures[i].name == name) {
-        adventureIndex = i;
-      }
-    }
-    //adventure does not exist yet
-    if(adventureIndex == -1){
-      res.send("Adventure does not exist yet");
-    }
-    console.log(jsonContent.adventures[adventureIndex].Times_Visited);
 
-    //runs the adventure pug file!!!
-    //assign adventureName to the name we receive in params
-    
-    res.render('adventure', {
-      'adventureName': name,
-      'adventureContent': jsonContent.adventures[adventureIndex]
-    }); //data is our json file with all the data!!!
+    var user = req.params.user;
+    for(var i = 0; i<jsonContent.users.length; i++){
+       if(jsonContent.users[i].id === user){
+
+         user = jsonContent.users[i];
+         var name = req.params.name; //name from the route
+         var adventureIndex = -1;
+         for(var i = 0; i < user.adventures.length; i++){
+           if(user.adventures[i].name == name) {
+             adventureIndex = i;
+           }
+         }
+         //adventure does not exist yet
+         if(adventureIndex == -1){
+           res.send("Adventure does not exist yet");
+         }
+         console.log(jsonContent.adventures[adventureIndex].Times_Visited);
+
+         //runs the adventure pug file!!!
+         //assign adventureName to the name we receive in params
+         res.render('adventure', {
+           'adventureName': name,
+           'adventureContent': user.adventures[adventureIndex]
+         });
+      //runs the TravelLog pug file!!!
+      //res.render('TravelLog', jsonContent); //data is our json file with all the data!!!
+       }
+    }
+
+   //data is our json file with all the data!!!
   } catch (e) {
     next(e)
   }
