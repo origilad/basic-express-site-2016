@@ -1,7 +1,23 @@
 extend layout
 block content
-  p Random adventure page
 
   div(class="container")
     div(class="jumbotron")
       h1 #{adventureName}
+
+  div.content
+    img(src=""+ adventureContent.image,
+    style="width:600px; height: 200px;",
+    alt="")
+
+  div.content
+    p Times Visited: #{adventureContent.Times_Visited}
+
+  div.content
+    p Rating: #{adventureContent.Rating}
+
+  div.content
+    p Hours Spent: #{adventureContent.Hours_Spent}
+
+  div.content
+    p Description: #{adventureContent.Description}

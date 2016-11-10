@@ -2,7 +2,11 @@ extend layout
 block content
 
     //paragraph for title
-    p #{title}
+    style.
+      h3 {font-size: 50px; color: #464646; margin-bottom:20px}
+
+    block content
+      h3 Travel Log
 
     //go through all of the adventures from the json file that we read
     each adventure in adventures
