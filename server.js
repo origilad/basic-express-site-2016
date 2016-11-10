@@ -41,9 +41,8 @@ app.get('/TravelLog/:user', TravelLog.TravelLog);
 
 
 var LoggedAdventure = require( __dirname + '/routes/LoggedAdventure');
-app.get('/LoggedAdventure/:user', function(req, res){
-});
-app.post('/LoggedAdventure', LoggedAdventure.Submit);
+app.get('/LoggedAdventure/:user/:lat/:lng', LoggedAdventure.LoggedAdventure);
+app.post('/LoggedAdventure/:user/:lat/:lng', LoggedAdventure.Submit);
 
 //HOMEPAGE
 var HomePage = require( __dirname + '/routes/HomePage');

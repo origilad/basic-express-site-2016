@@ -17,17 +17,21 @@ block content
             var map = L.map("map").setView([51.505, -0.09], 13);
             var user = !{JSON.stringify(user)};
             function onMarkerClick(e){
-                window.location = '/LoggedAdventure/' + user.id;
+                console.log("CHECKROOSTER");
+                console.log(e);
+                window.location = '/adventure/' + user.id + "/" + this.path;
             }
 
             function onMapClick(e){
                 var marker = L.marker([e.latlng.lat, e.latlng.lng ]).addTo(map);
                 marker.on('click', onMarkerClick);
+                window.location = '/LoggedAdventure/' + user.id + "/" + e.latlng.lat + "/" + e.latlng.lng;
             }
 
             var adventures = user.adventures; 
             for( var i = 0; i<adventures.length; i++){
                 var marker = L.marker([adventures[i].lat, adventures[i].lng]).addTo(map);
+                marker.path = adventures[i].name;
                 marker.on('click', onMarkerClick);
             }
 
