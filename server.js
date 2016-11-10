@@ -42,8 +42,6 @@ app.get('/TravelLog/:user', TravelLog.TravelLog);
 
 var LoggedAdventure = require( __dirname + '/routes/LoggedAdventure');
 app.get('/LoggedAdventure/:user', function(req, res){
-  console.log(req.body);
-  return res.render('logged-adventure', {title: "POOP", lat: req.body.lat});
 });
 app.post('/LoggedAdventure', LoggedAdventure.Submit);
 
@@ -57,7 +55,7 @@ app.get('/', function(req,res, next){
 });
 
 var adventure = require(__dirname + '/routes/adventure');
-app.get('/adventure/:name', adventure.getAdventure);
+app.get('/adventure/:user/:name', adventure.getAdventure);
 
 
 var Login = require( __dirname + '/routes/Login');
