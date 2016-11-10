@@ -11,12 +11,7 @@ exports.HomePage = function(req, res){
     marks[0] = data.markers[0];
     marks[1] = data.markers[1];
     marks[2] = data.markers[2];
-    res.render('homepage', {
-      title : 'HomePage2',
-      markers : marks,
-      newLoc: 0
-
-    });
+    res.render('homepage');
 
 
  } catch (e) {
@@ -25,3 +20,13 @@ exports.HomePage = function(req, res){
 
 
 };
+
+exports.Logging = function(req, res) {
+  //console.log(req.body)
+  for(var i = 0; i<jsonContent.users.length; i++){
+      if(jsonContent.users[i].id === req.body.user.id){
+          jsonContent.users[i].adventures.push({"lat": req.body.lat, "lng": req.body.lng});
+      }
+  }
+  res.redirect('/TravelLog');
+}

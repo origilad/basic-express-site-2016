@@ -165,8 +165,9 @@
         }
     ],
     "users" : 
-    {
-        "dmoll" : "dmoll"
-    }
+    [
+        {"id": "admin", "pwd": "123", "adventuresLength": "0", "adventures": [{"lat": 0, "lng": 0}]}        
+
+    ]
     
 }
