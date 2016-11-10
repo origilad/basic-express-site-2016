@@ -15,7 +15,7 @@ exports.getAdventure = function(req, res){
          user = jsonContent.users[i];
          var name = req.params.name; //name from the route
          var adventureIndex = -1;
-         for(var i = 0; i < user.adventures.length; i++){
+         for(var i = 0; i < user.adventures.length; i++){ //find the specific adventure
            if(user.adventures[i].name == name) {
              adventureIndex = i;
            }
@@ -24,8 +24,6 @@ exports.getAdventure = function(req, res){
          if(adventureIndex == -1){
            res.send("Adventure does not exist yet");
          }
-         console.log(jsonContent.adventures[adventureIndex].Times_Visited);
-
          //runs the adventure pug file!!!
          //assign adventureName to the name we receive in params
          res.render('adventure', {
