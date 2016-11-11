@@ -15,8 +15,7 @@ exports.LoggedAdventure = function(req, res){
        console.log(user + "!");
        if(jsonContent.users[i].id === user){
 
-         res.render('logged-adventure', {lat: lat, lng:lng, title: 'Logged Adventure', user: jsonContent.users[i]});
-
+         res.render('logged-adventure', {lat: lat, lng:lng, title: 'Logged Adventure', user: jsonContent.users[i], values: []});
        }
     }
  } catch (e) {

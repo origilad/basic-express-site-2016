@@ -33,7 +33,8 @@ block content
 
           div.input
             label Description
-            textarea#Rating(rows="5" cols="50" name="Description" value=values.Description class="form-control")
+            textarea#Rating(rows="5" cols="50" name="Description" class="form-control")
+              |  #{values.Description}
 
           div.actions
             input(type="submit", value="Edit")
