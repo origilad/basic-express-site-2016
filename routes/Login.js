@@ -29,17 +29,17 @@ exports.Submit = function(req, res) {
 		        res.redirect('/Home/' + jsonContent.users[i].id);
 	        }
 	        else{
-	          dialog.err("Invalid password!");
+//	          dialog.err("Invalid password!");
 	        } 
       }
       else{
-         dialog.err("Invalid user");
+ //        dialog.err("Invalid user");
          res.redirect('/Login');
       }
 
   }
   if (!found) {
-    dialog.err("Invalid username");
+  //  dialog.err("Invalid username");
   }
   //res.redirect('/Login');
 }
