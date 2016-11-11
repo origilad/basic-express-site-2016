@@ -31,7 +31,7 @@ exports.Submit = function(req, res) {
                 "adventures":[]};
       jsonContent.users.push(new_user);
       jsonfile.writeFileSync(__dirname + '/../data/data.json', jsonContent);      
-      res.redirect('/Login');
+      res.redirect('/Home/' + req.body.username);
     }
     else {
      console.log("into else")
