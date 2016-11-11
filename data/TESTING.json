@@ -217,6 +217,17 @@
                     "image": "http://lorempixel.com/600/200/?random=41",
                     "lng": "-0.08565902709960938",
                     "lat": "51.49848454717058"
+                },
+                {
+                    "name": "MyHouse3",
+                    "Date_Visited": "1996-01-30",
+                    "Times_Visited": "2",
+                    "Rating": "9",
+                    "Hours_Spent": "20000",
+                    "Description": " woww",
+                    "image": "http://lorempixel.com/600/200/?random=19",
+                    "lng": "-0.07673263549804688",
+                    "lat": "51.51931851179036"
                 }
             ]
         },

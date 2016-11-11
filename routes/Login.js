@@ -32,6 +32,10 @@ exports.Submit = function(req, res) {
 	          dialog.err("Invalid password!");
 	        } 
       }
+      else{
+         dialog.err("Invalid user");
+         res.redirect('/Login');
+      }
 
   }
   if (!found) {
