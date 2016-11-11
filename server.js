@@ -45,6 +45,9 @@ var LoggedAdventure = require( __dirname + '/routes/LoggedAdventure');
 app.get('/LoggedAdventure/:user/:lat/:lng', LoggedAdventure.LoggedAdventure);
 app.post('/LoggedAdventure/:user/:lat/:lng', LoggedAdventure.Submit);
 
+app.get('/LoggedAdventure/:user/:lat/:lng/edit', LoggedAdventure.LoggedAdventureEdit);
+app.post('/LoggedAdventure/:user/:lat/:lng/edit', LoggedAdventure.SubmitEdit);
+
 //HOMEPAGE
 var HomePage = require( __dirname + '/routes/HomePage');
 app.get('/Home/:user', HomePage.HomePage);

@@ -31,3 +31,5 @@ block content
 
         div.content
           p Description: #{adventureContent.Description}
+        -var location = "/LoggedAdventure/" + user.id + "/" + adventureContent.lat + "/" + adventureContent.lng + "/edit";
+        <a href=#{location} style="margin-left:4px;">Edit</a>

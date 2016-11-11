@@ -229,6 +229,11 @@
             "id": "ogilad2",
             "pwd": "tester",
             "adventures": []
+        },
+        {
+            "id": "bobody2",
+            "pwd": "creed",
+            "adventures": []
         }
     ],
     "_locals": {}
