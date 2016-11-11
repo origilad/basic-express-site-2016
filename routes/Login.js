@@ -18,21 +18,24 @@ exports.Login = function(req, res){
 
 exports.Submit = function(req, res) {
   //console.log(req.body)
+  var found = false;
   for(var i = 0; i<jsonContent.users.length; i++){
+
       if(jsonContent.users[i].id === req.body.username){
           if(jsonContent.users[i].pwd === req.body.password){
-		globalUserID = req.body.username;
-                //res.render('homepage', {user: jsonContent.users[i] });	      
-		res.redirect('/Home/' + jsonContent.users[i].id);
-	  }
-	  else{
-	      dialog.err("Invalid password!");
-	  }
-      }
-      else{
-          dialog.err("Invalid username!");
+		        globalUserID = req.body.username;
+                //res.render('homepage', {user: jsonContent.users[i] });
+            found = true;	      
+		        res.redirect('/Home/' + jsonContent.users[i].id);
+	        }
+	        else{
+	          dialog.err("Invalid password!");
+	        } 
       }
 
+  }
+  if (!found) {
+    dialog.err("Invalid username");
   }
   //res.redirect('/Login');
 }

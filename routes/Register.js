@@ -6,7 +6,6 @@ jsonfile.spaces = 4; //so when we write to jsonfile it formats
 var filepath = __dirname + "/../data/data.json";
 jsonContent = jsonfile.readFileSync(filepath); //read file and put as json object
 
-var globalUserID;
 
 exports.Register = function(req, res){
   try {
@@ -17,23 +16,26 @@ exports.Register = function(req, res){
 };
 
 exports.Submit = function(req, res) {
-  //console.log(req.body)
-  // fix to verify and add user
+  var validated = true;
+  console.log(req.body);
   for(var i = 0; i<jsonContent.users.length; i++){
-      if(jsonContent.users[i].id === req.body.username){
-          if(jsonContent.users[i].pwd === req.body.password){
-		globalUserID = req.body.username;
-                //res.render('homepage', {user: jsonContent.users[i] });	      
-		res.redirect('/Home/' + jsonContent.users[i].id);
-	  }
-	  else{
-	      dialog.err("Invalid password!");
-	  }
-      }
-      else{
-          dialog.err("Invalid username!");
-      }
-
+    if(jsonContent.users[i].id === req.body.username){
+      validated = false;
+    }
   }
-  //res.redirect('/Login');
-}
+  console.log("past for loop")
+  if (req.body.password === req.body.confirmpassword && validated===true) {
+      console.log("in if");
+      var new_user = {"id":req.body.username, 
+                "pwd": req.body.password,
+                "adventures":[]};
+      jsonContent.users.push(new_user);
+      jsonfile.writeFileSync(__dirname + '/../data/data.json', jsonContent);      
+      res.redirect('/Login');
+    }
+    else {
+     console.log("into else")
+      res.render('Register', {title: 'Register'})
+    }
+  };
+
