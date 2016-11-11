@@ -6,27 +6,36 @@ block prepend links
       - var travelURL = '/TravelLog/' + user.id;
 
 block content
-  p Log an Adventure!
-      form#log-adventure(method="post", enctype="application/json")
-        div.input
-          span.label Name
-          input#Name(type='text' name="name")
+  .main.container
+    .row
+      .col-md-6.col-md-offset-3
+        h1.display-2.m-b-2(style="text-align:center") Log your Adventure!
+        form#log-adventure(method="post", enctype="application/json") 
+          div.input
+            label Name
+            input#Name(type='text' name="name" class="form-control")
+        
+          div.input
+            label First Visit
+            input#TimesVisited(type='date' class="form-control" name="Date_Visited")
 
-        div.input
-          span.label Times Visited
-          input#TimesVisited(type='number' name="Times_Visited")
+          div.input
+            label Times Visited
+            input#TimesVisited(type='number' name="Times_Visited"  class="form-control")
 
-        div.input
-          span.label Rating (1-10)
-          input#Rating.formcontrol(type='number' name="Rating")
+          div.input
+            label Rating (1-10)
+            input#Rating.formcontrol(type='number' class="form-control" name="Rating")
 
-        div.input
-          span.label Hours Spent
-          input#HoursSpent(type='number' name="Hours_Spent")
+          div.input
+            label Hours Spent
+            input#HoursSpent(type='number' name="Hours_Spent" class="form-control")
 
-        div.input
-          span.label Description
-          textarea#Rating(rows="5" cols="50" name="Description")
+          div.input
+            label Description
+            textarea#Rating(rows="5" cols="50" name="Description" class="form-control")
 
-        div.actions
-          input(type="submit", value="Submit")
+          div.actions
+            input(type="submit", value="Submit")
+
+

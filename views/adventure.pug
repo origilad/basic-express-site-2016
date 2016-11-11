@@ -6,24 +6,28 @@ block prepend links
       - var travelURL = '/TravelLog/' + user.id;
 
 block content
+  .main.container
+    .row
+      .col-md-6.col-md-offset-3
+        h1.display-2.m-b-2(style="text-align:center")
 
-  div(class="container")
-    div(class="jumbotron")
-      h1 #{adventureName}
+        img(src=""+ adventureContent.image,
+        style="width:600px; height: 200px;",
+        alt="")
 
-  div.content
-    img(src=""+ adventureContent.image,
-    style="width:600px; height: 200px;",
-    alt="")
+        h1 #{adventureName}
 
-  div.content
-    p Times Visited: #{adventureContent.Times_Visited}
+        div.content
+          p First Visit: #{adventureContent.Date_Visited}
 
-  div.content
-    p Rating: #{adventureContent.Rating}
+        div.content
+          p Times Visited: #{adventureContent.Times_Visited}
 
-  div.content
-    p Hours Spent: #{adventureContent.Hours_Spent}
+        div.content
+          p Rating: #{adventureContent.Rating}
 
-  div.content
-    p Description: #{adventureContent.Description}
+        div.content
+          p Hours Spent: #{adventureContent.Hours_Spent}
+
+        div.content
+          p Description: #{adventureContent.Description}

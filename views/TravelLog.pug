@@ -9,7 +9,7 @@ block content
 
     //paragraph for title
     style.
-      h3 {font-size: 50px; color: #464646; margin-bottom:20px}
+      h3 {font-size: 50px; text-align: center;color: #464646; margin-bottom:20px}
 
     block content
       h3 Travel Log
@@ -17,9 +17,9 @@ block content
     //go through all of the adventures from the json file that we read
     each adventure in user.adventures
       a(href="/adventure/" +user.id+"/"+ adventure.name, class="adventure")
-        div(class = "image"	id= adventure.id)
+        div(class="image1", id= adventure.id)
           img(src=""+adventure.image,
-          style="width:600px; height: 200px;",
+          style="width:600px; height: 200px; margin:0;",
           alt="")
-          h2
+          h2(style="margin: 0;")
             span #{adventure.name}

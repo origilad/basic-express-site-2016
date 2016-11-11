@@ -5,7 +5,5 @@ block prepend links
       - var adURL = '/AdventureAnalytics/' + user.id;
       - var travelURL = '/TravelLog/' + user.id;
 
-block content
-  p.hi
-    ITS THE ADVENTURE ANALYTICS PAGE
-    img(src='/images/graph.png')
+block append content
+      include includes/analyticstabs
