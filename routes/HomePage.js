@@ -6,12 +6,17 @@ var globalUser;
 
 exports.HomePage = function(req, res){
   try {
+    var jsonfile = require('jsonfile'); //so we can easily write to json
+    jsonfile.spaces = 4; //so when we write to jsonfile it formats
+    var filepath = __dirname + "/../data/data.json";
+    data = jsonfile.readFileSync(filepath); //read file and put as json object
     var user = req.params.user;
     for(var i = 0; i<data.users.length; i++){
        console.log("wow");
        console.log(user + "!");
+       console.log(data.users[i].id);
        if(data.users[i].id === user){
-         
+         console.log("we made it")
          res.render('homepage', {user: jsonContent.users[i]});
        }
     }
