@@ -10,7 +10,7 @@ block content
     .row
       .col-md-6.col-md-offset-3
         h1.display-2.m-b-2(style="text-align:center") Log your Adventure!
-        form#log-adventure(method="post", enctype="application/json") 
+        form#log-adventure(method="post", enctype="multipart/form-data") 
           div.input
             label Name
             input#Name(type='text' name="name" value=values.name class="form-control")
@@ -32,11 +32,16 @@ block content
             input#HoursSpent(type='number' name="Hours_Spent" value=values.Hours_Spent class="form-control")
 
           div.input
+            label Image
+            input#Image(type='file', name="Image")
+
+          div.input
             label Description
             textarea#Rating(rows="5" cols="50" name="Description" class="form-control")
               |  #{values.Description}
 
           div.actions
-            input(type="submit", value="Submit")
+            input(type="submit", value="Submit").submitbtn
+            a.submitbtn(href=homeURL) Cancel
 
 

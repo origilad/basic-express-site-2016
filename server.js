@@ -5,7 +5,9 @@ var express = require('express')
   , logger = require('morgan')
   , app = express()
   , stylus = require('stylus')
-  , nib = require('nib');
+  , nib = require('nib')
+  , multer = require('multer')
+  , path = require('path');
 
 var bodyParser = require('body-parser');
 app.use(bodyParser.json()); // support json encoded bodies
@@ -27,6 +29,13 @@ app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 ));
 app.use(express.static(__dirname + '/public'))
 
+var options = multer.diskStorage({ destination : 'public/images/' ,
+  filename: function (req, file, cb) {
+    cb(null, file.originalname);
+    }
+});
+
+var upload = multer({ storage: options });
 
 /* ============================================== */
 /* ======= ROUTES  ============================== */
@@ -43,7 +52,7 @@ app.get('/TravelLog/:user', TravelLog.TravelLog);
 
 var LoggedAdventure = require( __dirname + '/routes/LoggedAdventure');
 app.get('/LoggedAdventure/:user/:lat/:lng', LoggedAdventure.LoggedAdventure);
-app.post('/LoggedAdventure/:user/:lat/:lng', LoggedAdventure.Submit);
+app.post('/LoggedAdventure/:user/:lat/:lng', upload.single('Image'), LoggedAdventure.Submit);
 
 app.get('/LoggedAdventure/:user/:lat/:lng/edit', LoggedAdventure.LoggedAdventureEdit);
 app.post('/LoggedAdventure/:user/:lat/:lng/edit', LoggedAdventure.SubmitEdit);
