@@ -28,7 +28,9 @@ exports.Submit = function(req, res) {
   //console.log(req.file)
   for(var i = 0; i<jsonContent.users.length; i++){
        if(jsonContent.users[i].id === req.params.user){
-          req.body["image"] = req.file.originalname;
+          if (req.body.file) {        
+            req.body["image"] = req.file.originalname;
+          }
           jsonContent.users[i].adventures[jsonContent.users[i].adventures.length] = req.body; //go to next available spot
           jsonContent.users[i].adventures[jsonContent.users[i].adventures.length-1].lat = req.params.lat; //go to next available spot
           jsonContent.users[i].adventures[jsonContent.users[i].adventures.length-1].lng = req.params.lng; //go to next available spot
