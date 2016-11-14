@@ -11,8 +11,6 @@ exports.LoggedAdventure = function(req, res){
     var lat = req.params.lat;
     var lng = req.params.lng;
     for(var i = 0; i<jsonContent.users.length; i++){
-       console.log("wow");
-       console.log(user + "!");
        if(jsonContent.users[i].id === user){
 
          res.render('logged-adventure', {lat: lat, lng:lng, title: 'Logged Adventure', user: jsonContent.users[i], values: []});
@@ -26,14 +24,11 @@ exports.LoggedAdventure = function(req, res){
 
 exports.Submit = function(req, res) {
   console.log(req.params.user);
-  console.log("CHECKING123");
-  req.body.image = "http://lorempixel.com/600/200/?random=" + Math.round(Math.random()*100); //generate random image to display
   var user;
+  //console.log(req.file)
   for(var i = 0; i<jsonContent.users.length; i++){
-       console.log("REPTAR");
-       console.log(user + "!");
-       console.log
        if(jsonContent.users[i].id === req.params.user){
+          req.body["image"] = req.file.originalname;
           jsonContent.users[i].adventures[jsonContent.users[i].adventures.length] = req.body; //go to next available spot
           jsonContent.users[i].adventures[jsonContent.users[i].adventures.length-1].lat = req.params.lat; //go to next available spot
           jsonContent.users[i].adventures[jsonContent.users[i].adventures.length-1].lng = req.params.lng; //go to next available spot
