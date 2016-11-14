@@ -228,6 +228,17 @@
                     "image": "http://lorempixel.com/600/200/?random=19",
                     "lng": "-0.07673263549804688",
                     "lat": "51.51931851179036"
+                },
+                {
+                    "name": "Camden Town",
+                    "Date_Visited": "2016-11-13",
+                    "Times_Visited": "2",
+                    "Rating": "5",
+                    "Hours_Spent": "10",
+                    "Description": "  It was great!",
+                    "image": "http://lorempixel.com/600/200/?random=93",
+                    "lng": "-0.14110565185546875",
+                    "lat": "51.53886172138777"
                 }
             ]
         },
