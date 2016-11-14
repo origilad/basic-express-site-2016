@@ -15,10 +15,11 @@ block content
     .row
       .col-md-6.col-md-offset-3
         h1.display-2.m-b-2(style="text-align:center")
-
-        img(src=""+ adventureContent.image,
-        style="width:600px; height: 200px;",
-        alt="")
+        -var imagepath = '/images/'+adventureContent.image;
+        div
+          img(src=""+imagepath,
+          style="width:600px; height: 200px;",
+          alt="")
 
         h1 #{adventureName}
 

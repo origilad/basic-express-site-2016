@@ -26,6 +26,7 @@
     "nodemon": "^1.9.2",
     "pug": "^2.0.0-beta6",
     "pug-bootstrap": "0.0.3",
-    "stylus": "^0.54.5"
+    "stylus": "^0.54.5",
+    "multer": "^1.2.0"
   }
 }

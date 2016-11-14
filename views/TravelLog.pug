@@ -29,7 +29,7 @@ block content
     each adventure in user.adventures
       a(href="/adventure/" +user.id+"/"+ adventure.name, class="adventure")
         div(class="image1", id= adventure.id)
-          img(src=""+adventure.image,
+          img(src="/images/"+adventure.image,
           style="width:600px; height: 200px; margin:0;",
           alt="")
           h2(style="margin: 0;")
