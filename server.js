@@ -58,7 +58,7 @@ app.get('/LoggedAdventure/:user/:lat/:lng', LoggedAdventure.LoggedAdventure);
 app.post('/LoggedAdventure/:user/:lat/:lng', upload.single('Image'), LoggedAdventure.Submit);
 
 app.get('/LoggedAdventure/:user/:lat/:lng/edit', LoggedAdventure.LoggedAdventureEdit);
-app.post('/LoggedAdventure/:user/:lat/:lng/edit', LoggedAdventure.SubmitEdit);
+app.post('/LoggedAdventure/:user/:lat/:lng/edit', upload.single('Image'), LoggedAdventure.SubmitEdit);
 
 //HOMEPAGE
 var HomePage = require( __dirname + '/routes/HomePage');

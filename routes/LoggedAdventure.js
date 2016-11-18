@@ -58,6 +58,7 @@ exports.LoggedAdventureEdit = function(req, res){
              if(jsonContent.users[i].adventures[j].lat === lat && jsonContent.users[i].adventures[j].lng === lng){
                exist = true;
                values = jsonContent.users[i].adventures[j];  
+               console.log(values);
              }
          }
          res.render('logged-adventure', {lat: lat, lng:lng, title: 'Logged Adventure', user: jsonContent.users[i], exists: exist, values: values});
@@ -84,7 +85,15 @@ exports.SubmitEdit = function(req, res) {
          for(var j = 0; j<jsonContent.users[i].adventures.length; j++){
             if(jsonContent.users[i].adventures[j].lat === req.params.lat && jsonContent.users[i].adventures[j].lng === req.params.lng){
               console.log("EDITINGADVENTURE!");
+              console.log(jsonContent.users[i].adventures[j]);
+              var old_image = jsonContent.users[i].adventures[j].image;
               jsonContent.users[i].adventures[j] = req.body; //go to next available spot
+              if (req.file) {
+                req.body["image"] = req.file.originalname;
+              }
+              else {
+                req.body["image"] = old_image;
+              }
               jsonContent.users[i].adventures[j].lng = req.params.lng; //go to next available spot
               jsonContent.users[i].adventures[j].lat = req.params.lat; //go to next available spot
               jsonfile.writeFileSync(__dirname + '/../data/data.json', jsonContent);
