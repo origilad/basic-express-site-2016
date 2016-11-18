@@ -21,6 +21,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
   }
   app.set('views', __dirname + '/views') //gets where our page maker is
   app.set('views/analyticstabs.pug', __dirname+ '/views/analyticstabs.pug')
+  app.set('views/graph.pug', __dirname+ '/views/graph.pug')
   app.set('view engine', 'pug')                //sets engine to jade
   app.use(stylus.middleware(
   { src: __dirname + '/public'      //compile .styl files in /public folder
