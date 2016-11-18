@@ -4,28 +4,6 @@ var filepath = __dirname + "/../data/data.json";
 jsonContent = jsonfile.readFileSync(filepath); //read file and put as json object
 //jsonContent.adventures[1].name = "no";  //go to adventures[1].name = Testtingg
 
-
-
-exports.TravelLog = function(req, res){
-  try {
-
-    var user = req.params.user;
-    jsonContent.showGrid	=	false; //make showGrid false
-    jsonfile.writeFileSync(__dirname + '/../data/data.json', jsonContent); //write it back
-
-    for(var i = 0; i<jsonContent.users.length; i++){
-       if(jsonContent.users[i].id === user){
-
-         res.render('TravelLog', {user: jsonContent.users[i], showGrid: jsonContent.showGrid});
-      //runs the TravelLog pug file!!!
-      //res.render('TravelLog', jsonContent); //data is our json file with all the data!!!
-       }
-    }
-  } catch (e) {
-    next(e)
-  }
-};
-
 exports.TravelLogGrid = function(req, res){
   try {
 

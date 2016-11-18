@@ -49,6 +49,8 @@ app.get('/AdventureAnalytics/:user', AdventureAnalytics.AdventureAnalytics);
 var TravelLog = require( __dirname + '/routes/TravelLog');
 app.get('/TravelLog/:user', TravelLog.TravelLog);
 
+var TravelLog = require( __dirname + '/routes/TravelLogGrid');
+app.get('/TravelLogGrid/:user', TravelLog.TravelLogGrid);
 
 var LoggedAdventure = require( __dirname + '/routes/LoggedAdventure');
 app.get('/LoggedAdventure/:user/:lat/:lng', LoggedAdventure.LoggedAdventure);

@@ -18,19 +18,40 @@ block content
       ga('send', 'pageview');
       ga('send','event','button','clickOnAdventure');
 
-    //paragraph for title
-    style.
-      h3 {font-size: 50px; text-align: center;color: #464646; margin-bottom:20px}
 
-    block content
-      h3 Travel Log
+    if(showGrid)
+      //paragraph for title
+      style.
+        h3 {font-size: 50px; text-align: center;color: #464646; margin-bottom:20px}
 
-    //go through all of the adventures from the json file that we read
-    each adventure in user.adventures
-      a(href="/adventure/" +user.id+"/"+ adventure.name, class="adventure")
-        div(class="image1", id= adventure.id)
-          img(src="/images/"+adventure.image,
-          style="width:600px; height: 200px; margin:0;",
-          alt="")
-          h2(style="margin: 0;")
-            span #{adventure.name}
+      block content
+        h3 Travel Log
+
+      div(class="grid")
+        //go through all of the adventures from the json file that we read
+        //GRID LAYOUT THOUGH
+        each adventure in user.adventures
+            div(class="grid_image", id= adventure.id)
+              a(href="/adventure/" +user.id+"/"+ adventure.name, class="adventure")
+                img(src="/images/"+adventure.image,
+                style="width:300px; height: 300px;")
+                h2
+                    span #{adventure.name}
+
+    else
+      //paragraph for title
+      style.
+        h3 {font-size: 50px; text-align: center;color: #464646; margin-bottom:20px}
+
+      block content
+        h3 Travel Log
+
+      //go through all of the adventures from the json file that we read
+      each adventure in user.adventures
+        a(href="/adventure/" +user.id+"/"+ adventure.name, class="adventure")
+          div(class="image1", id= adventure.id)
+            img(src="/images/"+adventure.image,
+            style="width:600px; height: 200px; margin-bottom:5px;",
+            alt="")
+            h2(style="margin:0px")
+              span #{adventure.name}
