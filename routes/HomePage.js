@@ -3,6 +3,7 @@ var app = express()
 var fs = require('fs');
 var data = require( '../data/data.json');
 var globalUser;
+var NeoGeocoder = require('node-geocoder');
 
 exports.HomePage = function(req, res){
   try {
@@ -16,7 +17,6 @@ exports.HomePage = function(req, res){
        console.log(user + "!");
        console.log(data.users[i].id);
        if(data.users[i].id === user){
-         console.log("we made it")
          res.render('homepage', {user: jsonContent.users[i]});
        }
     }

@@ -18,7 +18,28 @@ exports.AdventureAnalytics = function(req, res){
          var mostHours = [];
          var highestHours = 0;
          var message;
+         jsonContent.users[i].adventures.sort(function(a,b){
+            var c = new Date(a.Date_Visited);
+            var d = new Date(b.Date_Visited);
+            return c-d;
+         });
+
+         var currentDate = new Date();
+         var numDaysBetween = function(d1, d2){
+            var d3 = new Date(d2.Date_Visited);
+            var diff = Math.abs(d1.getTime() - d3.getTime());
+            return diff/(1000*60*60*24);
+         }
+         console.log("check1");
+         var thisWeek = [];
+         var weekAnalytics = {adventureTime:0, totalVisits:0};
+         var weekCounter = 0;
          for(var j = 0; j<jsonContent.users[i].adventures.length; j++){
+            console.log(numDaysBetween(currentDate, jsonContent.users[i].adventures[j]));
+            if(numDaysBetween(currentDate, jsonContent.users[i].adventures[j]) <= 7){
+              thisWeek[weekCounter] = jsonContent.users[i].adventures[j];
+              weekCounter++;
+            }
             if(parseInt(jsonContent.users[i].adventures[j].Rating) > highestRating){
               highestRating = jsonContent.users[i].adventures[j].Rating;
               highestRatedAdventures = [];
@@ -47,12 +68,17 @@ exports.AdventureAnalytics = function(req, res){
             if(jsonContent.users[i].adventures.length < 10){
               message = "Oh No! You've gone on less than 10 adventures, you should go out more!";
             }
-            else { message = "You've logged more than 10 adventures, look at you ;)!";}
-            console.log(jsonContent.users[i].adventures.length + "%%%%");
          }
-
-         
-         res.render('AdventureAnalytics', {title: 'AdventureAnalytics', user: jsonContent.users[i], highestRatedAd: highestRatedAdventures, mostVisited: mostAdventures, mostHours: mostHours, message: message});
+         console.log("321");
+         weekAnalytics.adventureTime = parseInt(0);
+         weekAnalytics.totalVisits = parseInt(0);
+ console.log("123");
+         for(var wi = 0; wi<thisWeek.length; wi++){
+           weekAnalytics.adventureTime += parseInt(thisWeek[wi].Hours_Spent);
+           weekAnalytics.totalVisits += parseInt(thisWeek[wi].Times_Visited);
+         }  
+     
+         res.render('AdventureAnalytics', {title: 'AdventureAnalytics', user: jsonContent.users[i], highestRatedAd: highestRatedAdventures, mostVisited: mostAdventures, mostHours: mostHours, message: message, weekly: thisWeek, weekAnalytics: weekAnalytics});
 
 
        }
