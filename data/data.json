@@ -56,7 +56,6 @@
                     "lng": "-0.11278152465820314"
                 },
                 {
-
                     "name": "Sigma Kappa Rox",
                     "Date_Visited": "",
                     "Times_Visited": "",
@@ -86,5 +85,5 @@
         }
     ],
     "_locals": {},
-    "showGrid": true
+    "showGrid": false
 }

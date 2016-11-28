@@ -7,12 +7,19 @@ block prepend links
       -//li: a(href=homeURL) Home!
 
 block content
+        div(class="alert alert-info")
+           if firstTime == 'true'   
+              Strong 
+                 h4 Welcome to Spots!
+           h5 Click on the map to log a new adventure! 
+
         link(rel='stylesheet', href='http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css')
         #map(style='height: 500px;')
         script(src='http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js')
         script(src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js")
         script.
             window.scrollTo(0,document.body.scrollHeight);
+            
             var map = L.map("map").setView([51.505, -0.09], 13);
             var user = !{JSON.stringify(user)};
             function onMarkerClick(e){

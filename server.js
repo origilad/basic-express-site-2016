@@ -63,6 +63,7 @@ app.post('/LoggedAdventure/:user/:lat/:lng/edit', upload.single('Image'), Logged
 //HOMEPAGE
 var HomePage = require( __dirname + '/routes/HomePage');
 app.get('/Home/:user', HomePage.HomePage);
+app.get('/Home/:user/:firstTime', HomePage.HomePage);
 
 //base route redirects to homepage
 app.get('/', function(req,res, next){
