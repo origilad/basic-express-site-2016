@@ -34,6 +34,17 @@
                     "lng": "-0.11278152465820314"
                 },
                 {
+                    "name": "Potato Chip",
+                    "Date_Visited": "0002-02-02",
+                    "Times_Visited": "",
+                    "Rating": "10",
+                    "Hours_Spent": "",
+                    "Description": "",
+                    "image": "potatochip.jpg",
+                    "lat": "51.50361379162682",
+                    "lng": "-0.11278152465820314"
+                },
+                {
                     "name": "beach",
                     "Date_Visited": "2016-01-02",
                     "Times_Visited": "2",
@@ -85,5 +96,5 @@
         }
     ],
     "_locals": {},
-    "showGrid": true
+    "showGrid": false
 }

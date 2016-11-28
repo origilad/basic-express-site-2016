@@ -26,7 +26,7 @@ exports.Submit = function(req, res) {
 		        globalUserID = req.body.username;
                 //res.render('homepage', {user: jsonContent.users[i] });
             found = true;	      
-		        res.redirect('/Home/' + jsonContent.users[i].id);
+		        res.redirect('/Home/' + jsonContent.users[i].id + '/true');
 	        }
 	        else{
 //	          dialog.err("Invalid password!");

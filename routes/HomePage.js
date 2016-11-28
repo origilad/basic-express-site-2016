@@ -12,12 +12,10 @@ exports.HomePage = function(req, res){
     var filepath = __dirname + "/../data/data.json";
     data = jsonfile.readFileSync(filepath); //read file and put as json object
     var user = req.params.user;
+    var firstTime = req.params.firstTime;
     for(var i = 0; i<data.users.length; i++){
-       console.log("wow");
-       console.log(user + "!");
-       console.log(data.users[i].id);
        if(data.users[i].id === user){
-         res.render('homepage', {user: jsonContent.users[i]});
+         res.render('homepage', {user: jsonContent.users[i], firstTime: firstTime});
        }
     }
  } catch (e) {

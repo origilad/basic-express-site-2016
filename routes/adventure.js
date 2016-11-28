@@ -14,6 +14,7 @@ exports.getAdventure = function(req, res){
        if(jsonContent.users[i].id === user){
 
          user = jsonContent.users[i];
+         console.log(user);
          var name = req.params.name; //name from the route
          var adventureIndex = -1;
          for(var i = 0; i < user.adventures.length; i++){ //find the specific adventure
