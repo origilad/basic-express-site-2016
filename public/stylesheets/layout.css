@@ -126,7 +126,7 @@ h2 span {
   bottom: 75px;
 }
 #adventurability {
-  margin-left: 4%;
+  margin-left: 2%;
 }
 #favorites {
   margin-left: 4%;
@@ -136,4 +136,16 @@ h2 span {
 }
 .analyticsGraph {
   margin-left: 2%;
+}
+.graphBlue {
+  background-color: #00f;
+}
+.analyticsHeaders {
+  color: #22689e;
+}
+.headThree {
+  color: #4e5154;
+}
+.bar {
+  fill: #22689e;
 }
