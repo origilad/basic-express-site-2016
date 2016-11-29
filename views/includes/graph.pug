@@ -1,6 +1,6 @@
 
 block tester
-
+        div(class="analyticsGraph")
            script(src="http://d3js.org/d3.v3.min.js")
            script.
                var margin = {top: 20, right: 20, bottom: 100, left: 40},
@@ -100,4 +100,3 @@ block tester
                      .attr("width", x.rangeBand())
                      .attr("y", function(d) { return y(d.Freq); })
                      .attr("height", function(d) { return height - y(d.Freq); });
-

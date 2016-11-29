@@ -13,13 +13,17 @@ block body(data-spy="scroll" data-target=".navbar" data-offset="50")
 
      div(id="adventurability")
            h1 Adventure Frequency
+     hr
+
+     div(id="analyticsGraph")
            block tester
-               include graph        
-           hr
+               include graph
+
+     hr
+     div(style = "margin-left:2%")
+       h1 Favorites
+     hr
      div(id="favorites")
-           hr
-           h1 Favorites
-           hr
            h3 Top Rated Place(s):
              br
              h5 #{highestRatedAd.join(', ')}
@@ -29,10 +33,13 @@ block body(data-spy="scroll" data-target=".navbar" data-offset="50")
            h3 Most Time Spent at:
              br
              h5 #{mostHours.join(', ')}
-           hr
+
+
+     hr
+     div(style = "margin-left:2%")
+       h1 Past Week
+     hr
      div(id="pastWeek")
-           h1 Past Week
-           hr
            h3 In the past, you've gone on these adventures:
               br
               each ad in weekly
