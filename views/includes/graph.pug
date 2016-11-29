@@ -1,6 +1,6 @@
 
 block tester
-        div(class="analyticsGraph")
+        div(class="analyticsGraph wowow")
            script(src="http://d3js.org/d3.v3.min.js")
            script.
                var margin = {top: 20, right: 20, bottom: 100, left: 40},
@@ -93,6 +93,7 @@ block tester
                  console.log(newData);
                  // Add bar chart
                  svg.selectAll("bar")
+                     .style("fill-color", "#22689e")
                      .data(newData)
                    .enter().append("rect")
                      .attr("class", "bar")
