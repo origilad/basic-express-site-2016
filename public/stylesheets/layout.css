@@ -137,3 +137,12 @@ h2 span {
 .analyticsGraph {
   margin-left: 2%;
 }
+.graphBlue {
+  background-color: #00f;
+}
+.analyticsHeaders {
+  color: #22689e;
+}
+.headThree {
+  color: #4e5154;
+}
