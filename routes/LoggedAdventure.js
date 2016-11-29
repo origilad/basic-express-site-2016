@@ -6,13 +6,11 @@ jsonContent = jsonfile.readFileSync(filepath); //read file and put as json objec
 exports.LoggedAdventure = function(req, res){
   try {
     //renders (jade file, title you want to give it)
-
     var user = req.params.user;
     var lat = req.params.lat;
     var lng = req.params.lng;
     for(var i = 0; i<jsonContent.users.length; i++){
        if(jsonContent.users[i].id === user){
-
          res.render('logged-adventure', {lat: lat, lng:lng, title: 'Logged Adventure', user: jsonContent.users[i], values: []});
        }
     }

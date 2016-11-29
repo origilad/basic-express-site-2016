@@ -12,7 +12,7 @@ block content
         h1.display-2.m-b-2(style="text-align:center") Log your Adventure!
         form#log-adventure(method="post", enctype="multipart/form-data")
           div.input
-            label Name
+            label Location Title
             input#Name(type='text' name="name" value=values.name class="form-control")
 
           div.input
@@ -36,8 +36,21 @@ block content
             input#Image(type='file', name="Image")
 
           div.input
+            label Friends 
+            input#Friends(type="text", name="Friends" value=values.Friends class="form-control")
+         
+          div.input
+            label Emotions felt
+            select#Emotions(rows="5" cols="50" name="Emotions" class="form-control", value=values.Emotions)
+              option Happy
+              option Sad
+              option Excited
+              option Bored
+
+          div.input
             label Description
             textarea#Rating(rows="5" cols="50" name="Description" class="form-control", value=values.Description)
+
 
           div.actions
             input(type="submit", value="Submit").submitbtn
