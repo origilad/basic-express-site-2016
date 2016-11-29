@@ -87,6 +87,45 @@
                     "image": "Figure_Skating__Publish_with_Glogster.jpeg",
                     "lat": "51.51440469156112",
                     "lng": "-0.13578414916992188"
+                },
+                {
+                    "name": "Pooping w/ bahari",
+                    "Date_Visited": "2016-11-29",
+                    "Times_Visited": "2",
+                    "Rating": "3",
+                    "Hours_Spent": "1",
+                    "Friends": "Bahari, David",
+                    "Emotions": "Excited",
+                    "Description": "What happens in Regents stays in regents",
+                    "image": "Figure_Skating__Publish_with_Glogster.jpeg",
+                    "lat": "51.52658144893172",
+                    "lng": "-0.13475418090820312"
+                },
+                {
+                    "name": "Pooping with bahari",
+                    "Date_Visited": "2016-11-29",
+                    "Times_Visited": "2",
+                    "Rating": "3",
+                    "Hours_Spent": "1",
+                    "Friends": "Bahari, David",
+                    "Emotions": "Excited",
+                    "Description": "What happens in Regents stays in regents",
+                    "image": "Figure_Skating__Publish_with_Glogster.jpeg",
+                    "lat": "51.52658144893172",
+                    "lng": "-0.13475418090820312"
+                },
+                {
+                    "name": "Pooping with Miranda",
+                    "Date_Visited": "2016-11-29",
+                    "Times_Visited": "2",
+                    "Rating": "1",
+                    "Hours_Spent": "2",
+                    "Friends": "Bahari and Miranda",
+                    "Emotions": "Bored",
+                    "Description": "God that was awful",
+                    "image": "Pink_frosted_sprinkled_donut.jpg",
+                    "lat": "51.5189980614127",
+                    "lng": "-0.059566497802734375"
                 }
             ]
         },
