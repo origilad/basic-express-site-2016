@@ -109,8 +109,9 @@ h2 span {
   margin: auto;
 }
 .grid {
-  margin-left: 2%;
-  margin-right: 2%;
+  width: 1000px;
+  margin-right: auto;
+  margin-left: auto;
 }
 .grid_image {
   float: left;
