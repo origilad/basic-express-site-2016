@@ -10,21 +10,21 @@ block body(data-spy="scroll" data-target=".navbar" data-offset="50")
          a(href="#favorites") Favorites
        li
          a(href="#pastWeek") Past Week
-    
-     div(id="adventurability") 
+
+     div(id="adventurability")
            h1 Adventure Frequency
            block tester
                include graph        
            hr
      div(id="favorites")
            hr
-           h1 Favorites 
+           h1 Favorites
            hr
            h3 Top Rated Place(s):
-             br 
+             br
              h5 #{highestRatedAd.join(', ')}
            h3 Most Visited Place(s):
-             br 
+             br
              h5 #{mostVisited.join(', ')}
            h3 Most Time Spent at:
              br
@@ -43,7 +43,7 @@ block body(data-spy="scroll" data-target=".navbar" data-offset="50")
            h3 The total amount of time you've spent at these adventures is:
               br
               h5 #{weekAnalytics.adventureTime} Hours!
-              
+
            h3 The total amount of times you've visited these places is:
               br
               h5 #{weekAnalytics.totalVisits} Visits!
