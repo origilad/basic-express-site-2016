@@ -26,13 +26,13 @@ block body(data-spy="scroll" data-target=".navbar" data-offset="50")
      div(id="favorites")
            h3 Top Rated Place(s):
              br
-             h5 #{highestRatedAd.join(', ')}
+             h5(style="margin-left:2%") #{highestRatedAd.join(', ')}
            h3 Most Visited Place(s):
              br
-             h5 #{mostVisited.join(', ')}
+             h5(style="margin-left:2%") #{mostVisited.join(', ')}
            h3 Most Time Spent at:
              br
-             h5 #{mostHours.join(', ')}
+             h5(style="margin-left:2%") #{mostHours.join(', ')}
 
 
      hr
@@ -45,13 +45,13 @@ block body(data-spy="scroll" data-target=".navbar" data-offset="50")
               each ad in weekly
                   - var link = "/adventure/" + user.id + "/" + ad.name
                   a(href=link)
-                    h5 #{ad.name} : #{ad.Description}
+                    h5(style="margin-left:2%") #{ad.name} : #{ad.Description}
            h3 In total, that's #{weekly.length} adventures this week!
            h3 The total amount of time you've spent at these adventures is:
               br
-              h5 #{weekAnalytics.adventureTime} Hours!
+              h5(style="margin-left:2%") #{weekAnalytics.adventureTime} Hours!
 
            h3 The total amount of times you've visited these places is:
               br
-              h5 #{weekAnalytics.totalVisits} Visits!
+              h5(style="margin-left:2%") #{weekAnalytics.totalVisits} Visits!
            hr
