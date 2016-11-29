@@ -70,7 +70,8 @@ block content
         a(href="/adventure/" +user.id+"/"+ adventure.name, class="adventure")
           div(class="image1", id= adventure.id)
             img(src="/images/"+adventure.image,
-            style="width:600px; height: 200px; margin-bottom:5px;",
+            style="width:600px; height: 300px; margin-bottom:10px;",
             alt="")
-            h2(style="margin:0px")
-              span #{adventure.name}
+            div(class="adventureTitle")
+              h2(style="margin-top:-140px")
+                span #{adventure.name}
