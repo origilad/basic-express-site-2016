@@ -36,6 +36,12 @@ block content
           p Hours Spent: #{adventureContent.Hours_Spent}
 
         div.content
+          p Emotion Felt: #{adventureContent.Emotions}
+        
+        div.content
+          p Friends traveled with: #{adventureContent.Friends}
+
+        div.content
           p Description: #{adventureContent.Description}
         -var location = "/LoggedAdventure/" + user.id + "/" + adventureContent.lat + "/" + adventureContent.lng + "/edit";
         <a href=#{location} style="margin-left:4px;">Edit</a>
